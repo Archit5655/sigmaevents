@@ -51,7 +51,7 @@ const Navbar = () => {
               <Link href="/" className="font-extrabold text-sm">
                 HOME
               </Link>
-              <Link href="/events" className="font-extrabold text-sm">
+              <Link href="/events" className="font-extrabold text-sm" onClick={closeMenu}>
                 EVENTS
               </Link>
             </div>
@@ -80,6 +80,12 @@ const Navbar = () => {
             className="font-extrabold dark:text-white text-sm opacity-50 hover:opacity-100 transition-opacity duration-200"
           >
             HOME
+          </Link>
+          <Link
+            href="/about"
+            className="font-extrabold text-sm opacity-50 hover:opacity-100 transition-opacity duration-200"
+          >
+            ABOUT
           </Link>
           <Link
             href="/events"
