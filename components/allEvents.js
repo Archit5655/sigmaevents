@@ -60,10 +60,10 @@ const AllEvents = () => {
 
   return (
     <main className="container p-4 mx-auto">
-      <h1 className="text-3xl font-bold mb-6 dark:text-white ">Events</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <h1 className="text-3xl font-bold mb-6">Events</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {loading ? (
-          <h1 className="text-2xl font-semibold text-gray-600 dark:text-gray-200">Loading... Please Wait</h1>
+          <h1 className="text-2xl font-semibold text-gray-600">Loading... Please Wait</h1>
         ) : (
           events.map((event) => (
             <div
@@ -103,11 +103,10 @@ const AllEvents = () => {
               <div className="mt-4 flex justify-center">
                 {session && (
                   <button
-                    className={`px-6 py-2 rounded-3xl hover:shadow-2xl ${
-                      checkRegister(event.registered)
-                        ? "bg-green-700 text-white hover:bg-green-800"
-                        : "bg-black text-white shadow-md hover:shadow-2xl"
-                    }`}
+                    className={`px-6 py-2 rounded-3xl hover:shadow-2xl ${checkRegister(event.registered)
+                      ? "bg-green-700 text-white hover:bg-green-800"
+                      : "bg-black text-white shadow-md hover:shadow-2xl"
+                      }`}
                     onClick={() => {
                       if (confirm('Do you want to confirm Registration for the event "' + event.title + `"`)) {
                         handleRegister(event);
